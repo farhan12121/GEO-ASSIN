@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Gem</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<header>
+
+</header>
+
+<body class="m-5">
+    <main class="flex flex-col lg:flex-row justify-center gap-5">
+        <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <!-- Triangle -->
+            <div onmousemove="triContainer()" onmouseleave="triContainer1()" id="container-1" class="card bg-base-100 shadow-xl flex-1">
+                <figure class="px-10 pt-10">
+                    <img src="image/triangle.png" alt="Shoes" class="rounded-xl" />
+                </figure>
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title">Triangle</h2>
+                    <p class="text-sm lg:text-2xl">Area(A) = 0.5 X b X h</p>
+                    <div>
+                        <input id="input-b" class="bg-slate-100 w-16 lg:w-24 rounded-sm text-lg p-2 mb-4" type="text"
+                            placeholder="b">
+                        <span class="mx-2">cm</span>
+                        <input id="input-h" class="bg-slate-100 w-16 lg:w-24 rounded-sm text-lg p-2" type="text"
+                            placeholder="h">
+                        <span class="mx-2">cm</span>
+                    </div>
+                    <div>
+                        <p class="text-xl lg:text-2xl">Area: <span id="result-area">0</span> cm<sup>2</sup></p>
+                    </div>
+                    <div class="w-full mt-10">
+                        <button onclick="calculateTriangleArea()"
+                            class="btn-primary bg-[#1090D8] w-full py-3 rounded-lg text-lg lg:text-2xl">Calculate</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Rectangle -->
+            <div onmousemove="recContainer()" onmouseleave="recContainer1()" id="continer-2" class="card bg-base-100 shadow-xl flex-1">
+                <figure class="px-10 pt-10">
+                    <img src="image/rectangle.png" alt="" class="rounded-xl" />
+                </figure>
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title">Rectangle</h2>
+                    <p>Area(A) = w X l</p>
+                    <div>
+                        <input id="input-w" class="bg-slate-100 w-24 rounded-sm text-lg p-3" type="text"
+                            placeholder="w">
+                        <span class="mx-4">cm</span>
+                        <input id="input-l" class="bg-slate-100 w-24 rounded-sm text-lg p-3" type="text"
+                            placeholder="l">
+                        <span class="mx-2">cm</span>
+                    </div>
+                    <div>
+                        <p class="text-2xl">Area: <span id="result-areaR">0</span> cm<sup>2</sup></p>
+                    </div>
+                    <div class="w-full mt-10">
+                        <button onclick="calculateRectangleArea()"
+                            class="btn-primary bg-[#1090D8] w-full py-3 rounded-lg text-2xl">Calculate</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Parallelogram -->
+            <div onmousemove="paraContainer()" onmouseleave="paraContainer1()" id="continer-3" class="card bg-base-100 shadow-xl flex-1">
+                <figure class="px-10 pt-10">
+                    <img src="image/parallelogram.png" alt="" class="rounded-xl" />
+                </figure>
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title">Parallelogram</h2>
+                    <p>Area(A) = b X h</p>
+                    <div>
+                        <input id="input-bp" class="bg-slate-100 w-24 rounded-sm text-lg p-3" type="text"
+                            placeholder="b">
+                        <span class="mx-4">cm</span>
+                        <input id="input-hp" class="bg-slate-100 w-24 rounded-sm text-lg p-3" type="text"
+                            placeholder="h">
+                        <span class="mx-2">cm</span>
+                    </div>
+                    <div>
+                        <p class="text-2xl">Area: <span id="result-areaP">0</span> cm<sup>2</sup></p>
+                    </div>
+                    <div class="w-full mt-10">
+                        <button onclick="calculateParallelogramArea()"
+                            class="btn-primary bg-[#1090D8] w-full py-3 rounded-lg text-2xl">Calculate</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Rhombus -->
+            <div onmousemove="rhContainer()" onmouseleave="rhContainer1()" id="continer-4" class="card bg-base-100 shadow-xl flex-1">
+                <figure class="px-10 pt-10">
+                    <img src="image/rhombus.png" class="rounded-xl" />
+                </figure>
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title">Rhombus</h2>
+                    <p>Area(A) = 0.5 X d<sub>1</sub> d<sub>2</sub></p>
+                    <div>
+                        <input id="input-d1" class="bg-slate-100 w-24 rounded-sm text-lg p-3" type="text"
+                            placeholder="b">
+                        <span class="mx-4">cm</span>
+                        <input id="input-d2" class="bg-slate-100 w-24 rounded-sm text-lg p-3" type="text"
+                            placeholder="h">
+                        <span class="mx-2">cm</span>
+                    </div>
+                    <div>
+                        <p class="text-2xl">Area: <span id="result-areaRh">0</span> cm<sup>2</sup></p>
+                    </div>
+                    <div class="w-full mt-10">
+                        <button onclick="calculateRhombusArea()"
+                            class="btn-primary bg-[#1090D8] w-full py-3 rounded-lg text-2xl">Calculate</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Pentagon -->
+            <div onmousemove="pnContainer()" onmouseleave="pnContainer1()" id="continer-5" class="card bg-base-100 shadow-xl flex-1">
+                <figure class="px-10 pt-10">
+                    <img src="image/pentagon.png" class="rounded-xl" />
+                </figure>
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title">Pentagon</h2>
+                    <p>Area(A) = 0.5 X p X b</p>
+                    <div>
+                        <input id="input-p1" class="bg-slate-100 w-24 rounded-sm text-lg p-3" type="text"
+                            placeholder="b">
+                        <span class="mx-4">cm</span>
+                        <input id="input-b2" class="bg-slate-100 w-24 rounded-sm text-lg p-3" type="text"
+                            placeholder="h">
+                        <span class="mx-2">cm</span>
+                    </div>
+                    <div>
+                        <p class="text-2xl">Area: <span id="result-areaPN">0</span> cm<sup>2</sup></p>
+                    </div>
+                    <div class="w-full mt-10">
+                        <button onclick="calculatePentagonArea()"
+                            class="btn-primary bg-[#1090D8] w-full py-3 rounded-lg text-2xl">Calculate</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ellipse -->
+            <div onmousemove="elContainer()" onmouseleave="elContainer1()" id="continer-6" class="card bg-base-100 shadow-xl flex-1">
+                <figure class="px-10 pt-10">
+                    <img src="image/ellipse.png" alt="Shoes" class="rounded-xl" />
+                </figure>
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title">Ellipse</h2>
+                    <p>Area(A) = &pi;ab</p>
+                    <div>
+                        <input id="input-a" class="bg-slate-100 w-24 rounded-sm text-lg p-3" type="text"
+                            placeholder="a">
+                        <span class="mx-4">cm</span>
+                        <input id="input-b3" class="bg-slate-100 w-24 rounded-sm text-lg p-3" type="text"
+                            placeholder="b">
+                        <span class="mx-2">cm</span>
+                    </div>
+                    <div>
+                        <p class="text-2xl">Area: <span id="result-areaE">0</span> cm<sup>2</sup></p>
+                    </div>
+                    <div class="w-full mt-10">
+                        <button onclick="calculateEllipseArea()"
+                            class="btn-primary bg-[#1090D8] w-full py-3 rounded-lg text-2xl">Calculate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="areaContiner" class="w-96 border-2 h-96 mt-5 rounded-xl">
+            <h4 class="underline text-center text-3xl pt-5">Area Calculation</h4>
+
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="script/geomatric.js"></script>
+</body>
+
+</html>
